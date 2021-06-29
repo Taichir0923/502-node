@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <% users.forEach(user => { %>
+            <div class="profile transition duration-300 hover:shadow-xl cursor-pointer text-center bg-gray-200 rounded-3xl h-64 p-6 flex flex-col items-center justify-center">
+                <img class="w-32 h-32 rounded-full" src="<%= user.picture.medium %>" alt="">
+                <h3 class="text-xl"><%= user.name.title %> <%= user.name.first %> <%= user.name.last %></h3>
+            </div>
+        <% }) %>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
